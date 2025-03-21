@@ -8,50 +8,45 @@ int main(){
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0}, // Podemos utilizar a estrutura for para não perder tempo
+        {0,0,0,0,0,0,0,0,0,0}, 
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0}
     };
-    int navioHorizontal [3] = {3,3,3};
-    int navioVertical [3] = {3,3,3};
+    int navio [3] = {3,3,3};
 
     printf("\n");
-    printf("--TABULEIRO BATALHA NAVAL--\n");
+
+    printf("     <TABULEIRO>\n");
+    printf("   ");
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", coluna[i]);
+    }
     printf("\n");
 
-    printf("  ");
-    for (int j = 0; j < 10; j++){
-        printf("%2c", coluna[j]);
-    }  
-    printf("\n");
-
-    for (int i = 0; i < 10; i++){
-        printf("%2d", linha[i] = i+1);
-        for (int j = 0; j < 10; j++){
-            printf("%2d", tabuleiro[i][j]);
+    for (int i = 0; i < 10; i++) {
+        printf("%2d", linha[i]);
+        for (int j = 0; j < 10; j++) {
+                printf("%2d", tabuleiro[i][j]);
         }
         printf("\n");
     }
     printf("\n");
 
-    printf("-----NAVIO HORIZONTAL-----\n");
+    printf("   <NAVIO HORIZONTAL>\n");
+    printf("   ");
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", coluna[i]);
+    }
     printf("\n");
 
-    printf("  ");
-    for (int j = 0; j < 10; j++){
-        printf("%2c", coluna[j]);
-    }  
-    printf("\n");
-
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++) {
         printf("%2d", linha[i]);
-        for (int j = 0; j < 10; j++){
-            if (i >= 2 && i < 5 && j >= 3 && j < 6){
-                tabuleiro[i][j] = navioHorizontal[i];
-                printf("%2d", navioHorizontal[i]);
+        for (int j = 0; j < 10; j++) {
+            if (i == 2 && j > 2 && j < 6){
+                printf("%2d", navio[0]);
             } else {
                 printf("%2d", tabuleiro[i][j]);
             }
@@ -59,6 +54,25 @@ int main(){
         printf("\n");
     }
     printf("\n");
+
+    printf("   <NAVIO VERTICAL>\n");
+    printf("   ");
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", coluna[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < 10; i++) {
+        printf("%2d", linha[i]);
+        for (int j = 0; j < 10; j++) {
+            if (i > 4 && i < 8 && j == 7){
+                printf("%2d", navio[0]);
+            } else {
+                printf("%2d", tabuleiro[i][j]);
+            }
+        }
+        printf("\n");
+    }
 
     return 0;
 }
