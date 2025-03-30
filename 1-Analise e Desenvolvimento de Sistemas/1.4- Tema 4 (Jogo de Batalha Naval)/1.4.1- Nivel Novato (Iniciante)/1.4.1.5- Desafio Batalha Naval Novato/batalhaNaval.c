@@ -15,10 +15,20 @@ int main(){
         }
     }
 
-    // Estrutura de repetição para receber a posição dos navios horizontal e vertical
+    // Estrutura de repetição para receber a posição do navio horizontal
     for (int i = 0; i < 3; i++){
         navioHorizontal[i] = 3;
-        navioVertical[i] = 3;
+        tabuleiro[2][3] = navioHorizontal[i];
+        tabuleiro[2][4] = navioHorizontal[i];
+        tabuleiro[2][5] = navioHorizontal[i];
+    }
+
+    // Estrutura de repetição para receber a posição do navio vertical
+    for (int j = 0; j < 3; j++){
+        navioVertical[j] = 3;
+        tabuleiro[5][7] = navioVertical[j];
+        tabuleiro[6][7] = navioVertical[j];
+        tabuleiro[7][7] = navioVertical[j];
     }
 
     // Estrutura de repetição para receber a quantidade de linhas representadas de 1 a 10
@@ -30,7 +40,6 @@ int main(){
     for (int i = 0; i < 10; i++){
         coluna[i] = 'A' + i;
     }
-
     printf("\n");
 
     // Exibe o nome do jogo
@@ -43,20 +52,10 @@ int main(){
     }
     printf("\n");
 
-    // Posiciona o navio horizontal na linha 2 coluna 3, 4 e 5
-    // Posiciona o navio Vertical na linha 5, 6 e 7 coluna 7
     // Exibe a posição dos navios no tabuleiro
     for (int i = 0; i < 10; i++){
         printf("%2d", linha[i]);
         for (int j = 0; j < 10; j++){
-            tabuleiro[2][3] = navioHorizontal[0];
-            tabuleiro[2][4] = navioHorizontal[1];
-            tabuleiro[2][5] = navioHorizontal[2];
-
-            tabuleiro[5][7] = navioVertical[0];
-            tabuleiro[6][7] = navioVertical[1];
-            tabuleiro[7][7] = navioVertical[2];
-
             printf("%2d", tabuleiro[i][j]);
         }
         printf("\n");
