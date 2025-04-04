@@ -35,7 +35,7 @@ int main(){
         tabuleiro[7][7] = navioVertical[j];
     }
 
-    for (int i = 0; i < 1; i++){
+    for (int i = 1; i < 4; i++){
         navioDiagonal[i] = 3;
         tabuleiro[i][i] = navioDiagonal[i];
     }
