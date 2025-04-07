@@ -12,7 +12,9 @@ int main(){
     int tabuleiro[LINHAS][COLUNAS];
     int navioHorizontal[NAVIO];
     int navioVertical[NAVIO];
-
+    int navioDiagonalPri[NAVIO];
+    int navioDiagonalSec[NAVIO];
+    
     // Estrutura de repetição para preencher o conteúdo do tabuleiro com o valor 0
     for (int i = 0; i < LINHAS; i++){
         for (int j = 0; j < COLUNAS; j++){
@@ -23,7 +25,7 @@ int main(){
     // Estrutura de repetição para receber a posição do navio horizontal
     int coordenadaX = 2;
     int coordenadaY = 3;
-    for (int i = 0; i < 3; i++){
+    for (int i = 0; i < NAVIO; i++){
         navioHorizontal[i] = NAVIO;
         tabuleiro[coordenadaX][coordenadaY] = navioHorizontal[i];
         coordenadaY++;
@@ -32,10 +34,26 @@ int main(){
     // Estrutura de repetição para receber a posição do navio vertical
     coordenadaX = 5;
     coordenadaY = 7;
-    for (int j = 0; j < 3; j++){
+    for (int j = 0; j < NAVIO; j++){
         navioVertical[j] = NAVIO;
         tabuleiro[coordenadaX][coordenadaY] = navioVertical[j];
         coordenadaX++;
+    }
+
+    // Estrutura de repetição para receber a posição do navio diagonal principal
+    int diagonalX = 1;
+    for (int i = 0; i < NAVIO; i++){
+        navioDiagonalPri[i] = NAVIO;
+        tabuleiro[diagonalX][diagonalX] = navioDiagonalPri[i];
+        diagonalX++;
+    }
+
+    // Estrutura de repetição para receber a posição do navio diagonal secundária
+    int diagonalSecX = 3; // Começa na linha 0
+    for (int i = 0; i < NAVIO; i++) {
+        navioDiagonalSec[i] = NAVIO;
+        tabuleiro[diagonalSecX][9 - diagonalSecX] = navioDiagonalSec[i]; // Posiciona na diagonal secundária
+        diagonalSecX++;
     }
 
     // Estrutura de repetição para receber a quantidade de linhas representadas de 1 a 10
